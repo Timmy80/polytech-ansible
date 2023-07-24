@@ -1,0 +1,23 @@
+---
+- name: Install Pre-requisites
+  become: yes
+  package:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+    - build-essential
+    - gcc
+    - g++
+    - make
+    - vim
+    - git
+    - sudo
+    - openssl
+    - bzip2
+    - wget
+    - curl
+
+
+
+...

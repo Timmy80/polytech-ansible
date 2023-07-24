@@ -3,11 +3,6 @@
   hosts: localhost
 
   roles:
-    # Common role that will allways be executed
-    # For common updates, main configurations, ...
-    - role: common
-      tags:
-        - allways # allways executed regarless of the tags
 
     # Fix an issue with ubuntu missing 'jammy-updates' repository on polytech development VM
     - role: fix-ubuntu
@@ -15,4 +10,16 @@
       tags:
         - fix-ubuntu
 
+    # Common role that will allways be executed
+    # For common updates, main configurations, ...
+    - role: common
+      tags:
+        - allways # allways executed regarless of the tags
+        
+    # Java role for jvm developement
+    - role: java
+      vars:
+        default_jdk: 'default-jre'
+      tags:
+        - java
 ...
