@@ -5,12 +5,12 @@
   roles:
     # Common role that will allways be executed
     # For common updates, main configurations, ...
-    - common:
+    - role: common
       tags:
         - allways # allways executed regarless of the tags
 
     # Fix an issue with ubuntu missing 'jammy-updates' repository on polytech development VM
-    - fix-ubuntu:
+    - role: fix-ubuntu
       tags:
         - fix-ubuntu
 
