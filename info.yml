@@ -1,0 +1,7 @@
+---
+- name: Infos Ansible
+  hosts: localhost
+  tasks:
+    - debug: var=vars
+    - debug: var=hostvars[inventory_hostname]
+...
