@@ -11,6 +11,7 @@
 
     # Fix an issue with ubuntu missing 'jammy-updates' repository on polytech development VM
     - role: fix-ubuntu
+      when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'jammy'
       tags:
         - fix-ubuntu
 

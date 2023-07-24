@@ -1,0 +1,11 @@
+
+- name: Ensure jammy-update is configured to fix libc6 dependencies
+  become: true
+  lineinfile:
+    path: /etc/apt/sources.list
+    regexp: '^{{item}}$'
+    line: '{{item}}'
+  loop:
+    - "deb http://fr.archive.ubuntu.com/ubuntu/ jammy-updates main restricted"
+    - "deb http://fr.archive.ubuntu.com/ubuntu/ jammy-updates universe"
+    - "deb http://fr.archive.ubuntu.com/ubuntu/ jammy-updates multiverse"
