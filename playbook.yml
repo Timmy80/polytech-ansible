@@ -1,7 +1,6 @@
-
+---
 - name: Polytech VM install
-  hosts:
-    - localhost
+  hosts: localhost
 
   roles:
     # Common role that will allways be executed
@@ -14,3 +13,5 @@
     fix-ubuntu:
       tags:
         - fix-ubuntu
+
+...
