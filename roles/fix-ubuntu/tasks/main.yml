@@ -9,3 +9,10 @@
     - "deb http://fr.archive.ubuntu.com/ubuntu/ jammy-updates main restricted"
     - "deb http://fr.archive.ubuntu.com/ubuntu/ jammy-updates universe"
     - "deb http://fr.archive.ubuntu.com/ubuntu/ jammy-updates multiverse"
+
+- name: Update apt cache
+  become: yes
+  when: ansible_pkg_mgr == 'apt'
+  apt:
+    force_apt_get: yes
+    update_cache: yes
