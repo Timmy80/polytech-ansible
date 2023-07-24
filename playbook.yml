@@ -1,0 +1,16 @@
+
+- name: Polytech VM install
+  hosts:
+    - localhost
+
+  roles:
+    # Common role that will allways be executed
+    # For common updates, main configurations, ...
+    common:
+      tags:
+        - allways # allways executed regarless of the tags
+
+    # Fix an issue with ubuntu missing 'jammy-updates' repository on polytech development VM
+    fix-ubuntu:
+      tags:
+        - fix-ubuntu
