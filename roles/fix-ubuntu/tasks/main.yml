@@ -3,12 +3,13 @@
   become: true
   lineinfile:
     path: /etc/apt/sources.list
-    regexp: '^{{item}}$'
-    line: '{{item}}'
+    regexp: '^deb\s+{{item.url}}\s+jammy-updates.*{{item.repo}}'
+    line: 'deb {{item.url}} jammy-updates {{item.repo}}'
   loop:
-    - "deb http://fr.archive.ubuntu.com/ubuntu/ jammy-updates main restricted"
-    - "deb http://fr.archive.ubuntu.com/ubuntu/ jammy-updates universe"
-    - "deb http://fr.archive.ubuntu.com/ubuntu/ jammy-updates multiverse"
+    - {"url": "http://fr.archive.ubuntu.com/ubuntu/", "repo": "main"}
+    - {"url": "http://fr.archive.ubuntu.com/ubuntu/", "repo": "restricted"}
+    - {"url": "http://fr.archive.ubuntu.com/ubuntu/", "repo": "universe"} 
+    - {"url": "http://fr.archive.ubuntu.com/ubuntu/", "repo": "multiverse"} 
 
 - name: Update apt cache
   become: yes

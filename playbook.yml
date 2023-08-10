@@ -14,7 +14,7 @@
     # For common updates, main configurations, ...
     - role: common
       tags:
-        - allways # allways executed regarless of the tags
+        - always # always executed regarless of the tags
         
     # Java role for jvm developement
     - role: java
