@@ -16,4 +16,11 @@
         default_jdk: 'default-jre'
       tags:
         - java
+    
+    # VSCode IDE 
+    - role: vscode-snap
+      vars:
+        insiders: true
+      tags:
+        - vscode
 ...

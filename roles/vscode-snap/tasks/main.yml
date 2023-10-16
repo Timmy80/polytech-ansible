@@ -1,0 +1,33 @@
+---
+
+- name: Install "code-insiders"
+  when: insiders == true
+  become: true
+  community.general.snap:
+    name: 
+      - code-insiders
+    channel: latest/stable
+
+- name: Install "vscode" 
+  when: insiders == false
+  become: true
+  community.general.snap:
+    name: 
+      - code
+    channel: latest/stable
+
+- name: Shortcut "code" for "code-insiders"
+  when: insiders == true
+  become: true
+  ansible.builtin.copy:
+    src: code
+    dest: /usr/local/bin/code
+    mode: u=rx,g=rx,o=rx
+
+- name: Remove shortcut "code" for "code-insiders"
+  when: insiders == false
+  become: true
+  ansible.builtin.file:
+    path: /usr/local/bin/code
+    state: absent
+...
