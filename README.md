@@ -1,6 +1,6 @@
 # Ansible for Polytech VM
 
-This [Ansible](https://www.ansible.com/) playbook is use to pre-install Polytech VM machine with useful learning softwares.
+This [Ansible](https://www.ansible.com/) playbook is used to pre-install Polytech VMs with useful learning softwares.
 
 ## Installation
 
@@ -8,12 +8,12 @@ This [Ansible](https://www.ansible.com/) playbook is use to pre-install Polytech
 
 The simpliest maner is to use the one line command:
 ```sh
-sh -c "$(curl -fsSL https://scm.univ-tours.fr/epu/dii5_m2m/ansible-vm/install.sh)"
+sh -c "$(curl -fsSL https://github.com/Timmy80/polytech-ansible/install.sh)"
 ```
 
 or with wget:
 ```sh
-sh -c "$(wget https://scm.univ-tours.fr/epu/dii5_m2m/ansible-vm/install.s -O -)"
+sh -c "$(wget https://github.com/Timmy80/polytech-ansible/install.sh -O -)"
 ```
 
 ### With playbook
@@ -25,12 +25,17 @@ sudo apt -o DPkg::Lock::Timeout=60 install -y python3-pip git
 pip3 install ansible
 ```
 
-To deploy the Ansible playbook on your machine, you can use directly the Ansible playbook command:
-```sh
-ansible-playbook -K playbook.yml
-```
-
 or if you want to use this repo:
 ```sh
-ansible-pull -K -U https://scm.univ-tours.fr/epu/dii5_m2m/ansible-vm.git playbook.yml
+ansible-pull -K -U https://github.com/Timmy80/polytech-ansible.git playbook.yml
+```
+
+### In case of issues with packages
+
+You may be facing issues with jammy-updates package.
+
+Use the playbook `fix-ubuntu.yml` to fix this before retrying the installation.
+
+```sh
+ansible-pull -K -U https://github.com/Timmy80/polytech-ansible.git fix-ubuntu.yml
 ```
