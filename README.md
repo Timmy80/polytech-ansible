@@ -8,12 +8,12 @@ This [Ansible](https://www.ansible.com/) playbook is used to pre-install Polytec
 
 The simpliest maner is to use the one line command:
 ```sh
-sh -c "$(curl -fsSL https://github.com/Timmy80/polytech-ansible/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Timmy80/polytech-ansible/main/install.sh)"
 ```
 
 or with wget:
 ```sh
-sh -c "$(wget https://github.com/Timmy80/polytech-ansible/install.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/Timmy80/polytech-ansible/main/install.sh -O -)"
 ```
 
 ### With playbook
