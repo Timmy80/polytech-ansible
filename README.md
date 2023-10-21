@@ -39,3 +39,11 @@ Use the playbook `fix-ubuntu.yml` to fix this before retrying the installation.
 ```sh
 ansible-pull -K -U https://github.com/Timmy80/polytech-ansible.git fix-ubuntu.yml
 ```
+
+## Developement
+
+to try changes localy:
+
+```bash
+ansible-playbook -k -c=local -i=127.0.0.1 playbook.yml
+```
