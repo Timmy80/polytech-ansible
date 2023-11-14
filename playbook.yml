@@ -23,4 +23,11 @@
         insiders: true
       tags:
         - vscode
+    
+    # Kubectl 
+    - role: kubectl
+      vars:
+        lens: true
+      tags:
+        - kubectl
 ...

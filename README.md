@@ -45,5 +45,5 @@ ansible-pull -K -U https://github.com/Timmy80/polytech-ansible.git fix-ubuntu.ym
 to try changes localy:
 
 ```bash
-ansible-playbook -k -c=local -i=127.0.0.1 playbook.yml
+ansible-playbook -K -c=local -i=127.0.0.1 playbook.yml
 ```

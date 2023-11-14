@@ -1,0 +1,26 @@
+---
+
+- name: Add Google's Apt signing key
+  become: true
+  ansible.builtin.apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: Add kubernetes repository into sources list
+  become: true
+  ansible.builtin.apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+    filename: kubernetes
+
+- name: Install kubectl
+  become: true
+  ansible.builtin.apt:
+    name: kubectl
+    state: present
+    update_cache: yes
+
+- name: Install "openlens"
+  become: true
+  ansible.builtin.apt:
+    deb: https://github.com/MuhammedKalkan/OpenLens/releases/download/v6.5.2-366/OpenLens-6.5.2-366.amd64.deb
