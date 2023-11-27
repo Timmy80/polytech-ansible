@@ -40,6 +40,12 @@ Use the playbook `fix-ubuntu.yml` to fix this before retrying the installation.
 ansible-pull -K -U https://github.com/Timmy80/polytech-ansible.git fix-ubuntu.yml
 ```
 
+### To install docker 
+
+```sh
+ansible-playbook -K -c=local -i=127.0.0.1  docker.yml
+```
+
 ## Developement
 
 to try changes localy:

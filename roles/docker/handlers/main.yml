@@ -1,0 +1,6 @@
+---
+- name: Please reboot
+  ansible.builtin.debug:
+    msg: To use docker without sudo. Please reboot!
+
+...

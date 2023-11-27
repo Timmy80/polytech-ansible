@@ -1,0 +1,11 @@
+---
+- name: Polytech VM docker install
+  hosts: localhost
+
+  roles:
+
+    # Install docker for ubuntu
+    - role: docker
+      become: true
+      when: ansible_distribution == 'Ubuntu' 
+...
