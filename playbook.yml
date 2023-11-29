@@ -30,4 +30,11 @@
         lens: true
       tags:
         - kubectl
+
+    # Install docker for ubuntu
+    - role: docker
+      become: true
+      when: ansible_distribution == 'Ubuntu' 
+      tags:
+        - docker
 ...
