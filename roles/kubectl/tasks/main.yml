@@ -30,4 +30,4 @@
 - name: Install "openlens"
   become: true
   ansible.builtin.apt:
-    deb: https://github.com/MuhammedKalkan/OpenLens/releases/download/v6.5.2-366/OpenLens-6.5.2-366.amd64.deb
+    deb: https://github.com/MuhammedKalkan/OpenLens/releases/download/v6.5.2-366/OpenLens-6.5.2-366.{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}.deb
